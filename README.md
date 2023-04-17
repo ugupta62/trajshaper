@@ -75,7 +75,8 @@ git clone https://github.com/arthurfenderbucker/realsense_3d_detector.git
 ```
 
 ## Running with ROS
-terminal 1
+Install the darknet_ros msgs from https://github.com/ugupta62/darknet_ros <br>
+In terminal 1
 ```
 roscore
 ```
