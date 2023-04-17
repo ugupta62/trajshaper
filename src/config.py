@@ -12,7 +12,7 @@ user_study_folder = "/home/arthur/local_data/user_study"
 base_folder = "/home/arthur/local_data/"
 data_folder = "/home/arthur/local_data/data/"
 # models_folder = "/home/arthur/data/models/"
-models_folder = "/home/arthur/local_data/models/"
+models_folder = "/home/catkin_ws/src/latte/models/"
 
 # image_dataset_folder = "/home/arthur/data/image_dataset/"
 image_dataset_folder = "/home/arthur/image_dataset/"
