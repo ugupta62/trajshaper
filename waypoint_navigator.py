@@ -35,11 +35,15 @@ class WaypointNavigator:
         self.robot_pose.twist.twist.linear.y = data.twist.linear.y
         self.robot_pose.twist.twist.linear.z = data.twist.linear.z
         
+        is_navigation_started = rospy.get_param("/is_navigation_started")
         # time step 
         r = rospy.Rate(1/self.time_step) # should be >= 2hz
         r.sleep()
         self.pubRobot(self.trajectory[self.index])
-        self.index += 1
+        if is_navigation_started == False:
+            self.index = 0
+        else:
+            self.index += 1
         if self.index >= len(self.trajectory):
             self.index = len(self.trajectory) - 1
 
@@ -68,8 +72,14 @@ class WaypointNavigator:
 
 if __name__ == '__main__':
     rospy.init_node('follow_waypoints', anonymous=True)
-    initial_waypoint = [[1, 1, 1, 0],
-                  [1.1, 1.1, 1.1, 0], [1.1, 1.1, 1.2, 0],
-                  [1.2, 1.1, 1.2, 0], [1.3, 1.2, 1.2, 0]]
+    initial_waypoint = [[1,     1,   1, 0],
+                        [1.1, 1.1, 1.1, 0],
+                        [1.1, 1.1, 1.2, 0],
+                        [1.2, 1.1, 1.2, 0],
+                        [1.3, 1.2, 1.2, 0]]
+    rospy.set_param('/is_navigation_started', False)
     waypoint_nav = WaypointNavigator(initial_waypoint)
     rospy.spin()
+
+                  
+   
