@@ -117,7 +117,7 @@ You will see the connection between mavros and PX4 gazebo simulator in the termi
 [ INFO] [1681691712.562207569]: VER: 1.1: OS software:         050e00ff (0000000000000000)
 
 ```
-In the px4-gazebo terminal, type `commander takeoff` for taking off and run the waypoint_navigator.py file. Then in the same terminal type `commander mode offboard` to engage the offboard command and you can see the quadrotor following the trajectory defined in the waypoint_navigator.py file.
+In the px4-gazebo terminal, type `commander takeoff` for taking off and run the waypoint_navigator.py file. Then in the same terminal type `commander mode offboard` to engage the offboard command. In order to engage the trajectory tracking, in a new terminal, type `rosparam set /is_navigation_started True`.
 
 ## Other relevant files
 overview of the project
