@@ -78,7 +78,7 @@ if __name__ == '__main__':
                         [1.2, 1.1, 1.2, 0],
                         [1.3, 1.2, 1.2, 0]]
     rospy.set_param('/is_navigation_started', False)
-    waypoint_nav = WaypointNavigator(initial_waypoint)
+    waypoint_nav = WaypointNavigator(initial_waypoint, time_step=0.5)
     rospy.spin()
 
                   
