@@ -101,9 +101,9 @@ roslaunch mavros px4.launch
 ```
 
 Setup Gazebo <br>
-https://docs.px4.io/main/en/sim_gazebo_gz/#installation-ubuntu-linux <br>
+https://docs.px4.io/v1.12/en/simulation/gazebo.html <br>
 
-After `make px4_sitl gz_x500`, change a parameter in the px4 console inorder to make the quadrotor loiter at its current position when the offboard mode is unavailable by:
+Type`make px4_sitl gazebo__warehouse` in the PX4-Autopilot directory, change a parameter in the px4 console inorder to make the quadrotor loiter at its current position when the offboard mode is unavailable by:
 ```
 param set COM_OBL_RC_ACT 5
 ```
@@ -117,7 +117,7 @@ You will see the connection between mavros and PX4 gazebo simulator in the termi
 [ INFO] [1681691712.562207569]: VER: 1.1: OS software:         050e00ff (0000000000000000)
 
 ```
-In the px4-gazebo terminal, type `commander takeoff` for taking off and run the waypoint_navigator.py file. Then in the same terminal type `commander mode offboard` to engage the offboard command. In order to engage the trajectory tracking, in a new terminal, type `rosparam set /is_navigation_started True`.
+In the px4-gazebo terminal, type `commander takeoff` for taking off and run the trajectory_tracking.py file. Then in the same terminal type `commander mode offboard` to engage the offboard command. In order to engage the trajectory tracking, in a new terminal, type `rosparam set /is_navigation_started True`.
 
 ## Other relevant files
 overview of the project
